@@ -1,8 +1,13 @@
 ---
 
-default: --profile progress -p homolog
+default: --profile progress -p homolog -p chrome
 
 pretty: --format pretty
 progress: --format progress
 homolog: AMBIENTE=homolog
 producao: AMBIENTE=producao
+
+#Definindo ambientes de navegadores 
+chrome: BROWSER=chrome
+firefox: BROWSER=firefox
+ie: BROWSER=ie
