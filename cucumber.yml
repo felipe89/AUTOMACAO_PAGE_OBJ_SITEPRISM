@@ -1,6 +1,6 @@
 ---
 
-default: --profile progress -p homolog -p chrome
+default: --profile progress -p homolog -p firefox_headless
 
 pretty: --format pretty
 progress: --format progress
@@ -9,5 +9,9 @@ producao: AMBIENTE=producao
 
 #Definindo ambientes de navegadores 
 chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
+
 firefox: BROWSER=firefox
+firefox_headless: BROWSER=firefox_headless
+
 ie: BROWSER=ie
