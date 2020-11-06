@@ -2,6 +2,7 @@
  require 'selenium-webdriver'
  require 'site_prism'
  require_relative 'page_helper.rb'
+ require_relative 'helper.rb'
 
  BROWSER = ENV['BROWSER']
  AMBIENTES = ENV['AMBIENTE']
@@ -9,6 +10,7 @@
  CONFIG = YAML.load_file(File.dirname(__FILE__) + "/ambientes/#{AMBIENTES}.yml")
 
  World(PageObjects)
+ World(Helper)
  
  Capybara.register_driver :selenium do |app|
       
@@ -26,10 +28,6 @@
   elsif BROWSER.eql?('firefox_headless')
     browser_options = Selenium::WebDriver::Firefox::Options.new(args: ['--headless'])
     Capybara::Selenium::Driver.new(app, :browser => :firefox, options: browser_options)
-
-
-
-
   # elsif BROWSER.eql?('ie')
   #   options = {js_errors: false}
   #   Capybara::Selenium::Driver.new(app, :browser => :internet_explore,)

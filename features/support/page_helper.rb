@@ -5,5 +5,6 @@ module PageObjects
     def home
         @home ||=MapeandoElementoPage.new
 
-    end    
+    end   
 end
+
